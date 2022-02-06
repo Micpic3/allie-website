@@ -1,1 +1,36 @@
-Coming soon. Hold your horses. 🐎
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Coming soon. Hold your horses. <span id="horse">🐎</span>
+  </body>
+
+  <style type="text/css">
+    #horse {
+      position: absolute;
+      transition: all 2s ease;
+    }
+
+    .running {
+      transform: translate(200px, 50px) scale(7);
+    }
+  </style>
+
+  <script>
+    const horse = document.querySelector("#horse");
+
+    function moveHorse() {
+      horse.classList.toggle("running");
+    }
+    function comeBack() {
+      horse.classList.remove("running");
+    }
+    horse.addEventListener("click", moveHorse);
+    horse.addEventListener("transitionend", comeBack);
+  </script>
+</html>
